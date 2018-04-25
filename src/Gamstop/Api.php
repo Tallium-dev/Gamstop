@@ -35,8 +35,9 @@ class Api
         ];
 
         $this->client = new Client([
-            'base_uri' => self::URI,
-            'timeout'  => 2,
+            'base_uri'    => self::URI,
+            'timeout'     => 2,
+            'http_errors' => false,
         ]);
     }
 
