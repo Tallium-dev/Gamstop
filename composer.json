@@ -1,0 +1,32 @@
+{
+    "name": "yaro/gamstop",
+    "description": "GAMSTOP package",
+    "keywords": ["laravel", "gamstop", "gambling"],
+    "homepage": "",
+    "authors": [
+        {
+            "name": "Yaro",
+            "email": "12fcv4@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Yaro\\Gamstop\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Yaro\\Gamstop\\ServiceProvider"
+            ],
+            "aliases": {
+                "Gamstop": "Yaro\\Gamstop\\Facade"
+            }
+        }
+    },
+    "license": "MIT",
+    "minimum-stability": "stable"
+}
