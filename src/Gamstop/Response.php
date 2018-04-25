@@ -22,7 +22,8 @@ class Response
     {
         $this->response = $response;
 
-        $exclusion = array_shift($this->response->getHeader(self::EXCLUSION_HEADER));
+        $header = $this->response->getHeader(self::EXCLUSION_HEADER);
+        $exclusion = array_shift($header);
         $this->exclusionType = $exclusion ?: self::DEFAULT_EXCLUSION_TYPE;
     }
 
@@ -41,7 +42,9 @@ class Response
 
     public function getId()
     {
-        return array_shift($this->response->getHeader(self::UNIQUE_ID_HEADER));
+        $header = $this->response->getHeader(self::UNIQUE_ID_HEADER);
+        
+        return array_shift($header);
     }
 
     public function getExclusionType()
