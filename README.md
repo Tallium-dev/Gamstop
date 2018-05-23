@@ -4,7 +4,7 @@ Package for Gamstop API for checking user's self-exclusion for online gambling.
 ## Installation
 You can install the package through Composer.
 ```
-composer require yaro/log-envelope
+composer require yaro/gamstop
 ```
 
 ## Usage
