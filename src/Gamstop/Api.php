@@ -14,7 +14,7 @@ use Yaro\Gamstop\Interfaces\GamstopCheckableInterface;
 class Api
 {
 
-    const URI = 'https://api.gambusters.co.uk';
+    const URI = 'https://api.stage.api.gamstop.io/v1';
 
     /**
      * @var Client
