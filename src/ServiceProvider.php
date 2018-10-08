@@ -26,7 +26,7 @@ class ServiceProvider extends IlluminateServiceProvider
     public function register()
     {
         $this->app->singleton('yaro.gamstop', function($app) {
-            return new Api($app['config']->get('services.gamstop.key'));
+            return new Api($app['config']->get('services.gamstop.key'), $app['config']->get('services.gamstop.base_uri'));
         });
     }
 

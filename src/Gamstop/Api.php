@@ -13,29 +13,28 @@ use Yaro\Gamstop\Interfaces\GamstopCheckableInterface;
 
 class Api
 {
-
-    const URI = 'https://api.stage.api.gamstop.io/v1';
-
     /**
      * @var Client
      */
     private $client;
     private $apiKey;
     private $headers = [];
+    private $baseUri;
 
-    public function __construct($apiKey)
+    public function __construct($apiKey, $base_uri)
     {
         $this->apiKey = $apiKey;
         if (!$this->apiKey) {
             throw new ApiKeyInvalidException();
         }
+        $this->baseUri = $base_uri;
 
         $this->headers = [
             'X-API-Key' => $this->apiKey,
         ];
 
         $this->client = new Client([
-            'base_uri'    => self::URI,
+            'base_uri'    => $this->baseUri,
             'timeout'     => 2,
             'http_errors' => false,
         ]);
